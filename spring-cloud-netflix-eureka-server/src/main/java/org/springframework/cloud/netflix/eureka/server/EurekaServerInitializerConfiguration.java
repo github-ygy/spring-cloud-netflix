@@ -68,6 +68,7 @@ public class EurekaServerInitializerConfiguration
 			public void run() {
 				try {
 					//TODO: is this class even needed now?
+					// 加入spring生命周期，初始化加载
 					eurekaServerBootstrap.contextInitialized(EurekaServerInitializerConfiguration.this.servletContext);
 					log.info("Started Eureka Server");
 

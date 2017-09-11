@@ -16,8 +16,6 @@
 
 package org.springframework.cloud.netflix.eureka.server;
 
-import javax.servlet.ServletContext;
-
 import com.netflix.appinfo.ApplicationInfoManager;
 import com.netflix.appinfo.DataCenterInfo;
 import com.netflix.appinfo.InstanceInfo;
@@ -36,6 +34,8 @@ import com.netflix.eureka.util.EurekaMonitors;
 import com.thoughtworks.xstream.XStream;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import javax.servlet.ServletContext;
 
 /**
  * @author Spencer Gibb
@@ -79,7 +79,7 @@ public class EurekaServerBootstrap {
 
 	public void contextInitialized(ServletContext context) {
 		try {
-			initEurekaEnvironment();
+			initEurekaEnvironment();  //初始化eureka环境
 			initEurekaServerContext();
 
 			context.setAttribute(EurekaServerContext.class.getName(), this.serverContext);
